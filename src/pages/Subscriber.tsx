@@ -24,7 +24,7 @@ export default function Subscriber() {
             Inscreva-se gratuitamente
           </strong>
 
-          <form action='' className='flex flex-col gap-2 w-full'>
+          <form className='flex flex-col gap-2 w-full'>
             <input
               className='bg-gray-900 rounded px-5 h-14'
               type='text'
@@ -35,9 +35,14 @@ export default function Subscriber() {
               type='email'
               placeholder='Digite seu e-mail'
             />
-          </form>
 
-          <button type='submit' className='mt-4 bg-green-500 uppercase py-4 rounded font-bold text-sm hover:bg-slate-700 transition-colors'>Garantir minha vaga</button>
+            <button
+              type='submit'
+              className='mt-4 bg-green-500 uppercase py-4 rounded font-bold text-sm hover:bg-slate-700 transition-colors'
+            >
+              Garantir minha vaga
+            </button>
+          </form>
         </div>
       </div>
 
