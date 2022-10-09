@@ -8,13 +8,12 @@ import {
 } from 'phosphor-react';
 
 import '@vime/core/themes/default.css';
-import { da } from 'date-fns/locale';
 
 const GET_LESSONS_BY_SLUG_QUERY = gql`
   query GetLessonBySlug($slug: String) {
     lesson(where: { slug: $slug }) {
       title
-      id
+      videoId
       description
       teacher {
         bio
