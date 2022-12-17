@@ -51,7 +51,7 @@ export function Video(props: VideoProps) {
     }
   );
 
-  console.log(data);
+//  console.log(data);
 
   /* Desafio Criar tela spinner de load na tela */
   if (!data) {

@@ -27,5 +27,18 @@
     "tailwindcss": "^3.1.8",
     "typescript": "^4.6.3",
     "vite": "^2.9.9"
-  }
+  },
+  "main": "postcss.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klsio22/nlw-ignite-lab-event-platform.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/klsio22/nlw-ignite-lab-event-platform/issues"
+  },
+  "homepage": "https://github.com/klsio22/nlw-ignite-lab-event-platform#readme",
+  "description": ""
 }
