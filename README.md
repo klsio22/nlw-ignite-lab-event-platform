@@ -6,7 +6,8 @@
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-licença">Licença</a>
+  <a href="#memo-licença">Licença</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-licença">Executar</a>
 </p>
 
 <p align="center">
@@ -34,9 +35,9 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 🔖 Layout
 
-Você pode visualizar o layout do projeto através [desse link](). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
+Você pode visualizar o layout do projeto através [desse link](https://www.figma.com/file/WtiDW4EOL7A5FMboCE233K/Plataforma-de-evento---Ignite-Lab-(Community)?node-id=0%3A1&t=qevqLAPTYtjYW8Am-1). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
 
-## :memo: Licença
+## 📝 Licença
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
 
@@ -44,18 +45,26 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para
 
 > Obs.: Nesse projeto temos autenticação via OAuth com o GitHub
 > 
-#### No Front-end siga os seguindes passos :
+#### No Front-end siga os seguintes passos :
 
-- acesse a pasta **nlw-heat-react**;
-- Instale as dependências com `yarn`;
-- Inicie o servidor com `yarn start`;
+- Instale as dependências com `yarn ou npm install`;
+- Inicie o servidor com `yarn start ou npm start`;
+
+
+- crie um arquivo com o nome de `.env.local` e adiciona valores as variáveis : 
+  
+  ```js 
+  VITE_API_URL= 
+  VITE_API_ACCESS_TOKEN=
+  ```
 
 A aplicação pode ser acessada em [`localhost:3000`](http://localhost:3000) no front-end.
 
+
 #### Documentação de pacotes usados durante o projeto no notion:
 
-🌍 [Documentação e anotações]()
+🌍 [Documentação e anotações](https://indigo-hisser-408.notion.site/Nlw-ignite-lab-react-32a4c3456a2f4dbf9affaff6927b34bb)
 
 -----
 
-💪✍️ Projeto desenvolvido acompanhando o evento da Rocketset **Ignite lab** junto a comunidade da Rocketset no [discord](http://starter-bot.rocketseat.dev/api/discord/login?param=YmFiZDBlNTQtNjBjZi00OWFhLWI3ZjAtYjhhOTYzYzE0MmY4) .💪✍️
+💪✍️ Projeto desenvolvido acompanhando o evento da Rocketseat **Ignite lab** junto com comunidade da Rocketseat no [discord](http://starter-bot.rocketseat.dev/api/discord/login?param=YmFiZDBlNTQtNjBjZi00OWFhLWI3ZjAtYjhhOTYzYzE0MmY4) .💪✍️
