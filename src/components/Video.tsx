@@ -9,33 +9,6 @@ import {
 
 import '@vime/core/themes/default.css';
 
-const GET_LESSONS_BY_SLUG_QUERY = gql`
-  query GetLessonBySlug($slug: String) {
-    lesson(where: { slug: $slug }) {
-      title
-      videoId
-      description
-      teacher {
-        bio
-        avatarURL
-        name
-      }
-    }
-  }
-`;
-
-interface GetLessonBySlugResponse {
-  lesson: {
-    title: string;
-    videoId: string;
-    description: string;
-    teacher: {
-      bio: string;
-      avatarURL: string;
-      name: string;
-    };
-  };
-}
 
 interface VideoProps {
   lessonSlug: string;
