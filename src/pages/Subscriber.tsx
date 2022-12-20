@@ -1,5 +1,6 @@
 import { gql, useMutation } from '@apollo/client';
 import { useState, FormEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Logo } from '../components/Logo';
 
 const CREATE_SUBSCRIBER_MUTATION = gql`
@@ -11,21 +12,27 @@ const CREATE_SUBSCRIBER_MUTATION = gql`
 `;
 
 export default function Subscriber() {
+  const navigate = useNavigate();
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
-  const [createSubscriber] = useMutation(CREATE_SUBSCRIBER_MUTATION);
+  const [createSubscriber, { loading }] = useMutation(
+    CREATE_SUBSCRIBER_MUTATION
+  );
 
-  function handleSubscriber(event: FormEvent) {
+  async function handleSubscriber(event: FormEvent) {
     event.preventDefault();
 
-    console.log(name, email);
-    createSubscriber({
+    //console.log(name, email);
+    await createSubscriber({
       variables: {
         name,
         email,
       },
     });
+
+    navigate('/event/lesson/abertura-do-evento-ignite-lab');
   }
 
   return (
@@ -69,7 +76,8 @@ export default function Subscriber() {
 
             <button
               type='submit'
-              className='mt-4 bg-green-500 uppercase py-4 rounded font-bold text-sm hover:bg-slate-700 transition-colors'
+              disabled={loading}
+              className='mt-4 bg-green-500 uppercase py-4 rounded font-bold text-sm hover:bg-slate-700 transition-colors disabled:opacity-50'
             >
               Garantir minha vaga
             </button>
