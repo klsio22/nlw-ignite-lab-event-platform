@@ -2,6 +2,7 @@ import { useState, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Logo } from '../components/Logo';
 import { useCreateSubscriberMutation } from '../graphql/generated';
+import { Footer } from '../components/Footer';
 
 export default function Subscriber() {
   const navigate = useNavigate();
@@ -9,7 +10,7 @@ export default function Subscriber() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
-  const [createSubscriber, { loading }] = useCreateSubscriberMutation()
+  const [createSubscriber, { loading }] = useCreateSubscriberMutation();
 
   async function handleSubscriber(event: FormEvent) {
     event.preventDefault();
@@ -74,8 +75,13 @@ export default function Subscriber() {
           </form>
         </div>
       </div>
-
-      <img src='/src/assets/code-mockup.png' className='mt-10' alt='' />
+      <img
+        src='/src/assets/reactjs-icon.svg'
+        className='absolute mt-10'
+        alt=''
+      />
+      <img src='/src/assets/code-mockup.svg' className='mt-10' alt='' />
+      <Footer />
     </div>
   );
 }
