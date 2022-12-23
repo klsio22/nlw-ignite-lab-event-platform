@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { Logo } from '../components/Logo';
 import { useCreateSubscriberMutation } from '../graphql/generated';
 import { Footer } from '../components/Footer';
+import { ReactJsIcon } from '../components/ReactJsIcon';
+import { CodeMockup } from '../components/CodeMockup';
 
 export default function Subscriber() {
   const navigate = useNavigate();
@@ -75,12 +77,13 @@ export default function Subscriber() {
           </form>
         </div>
       </div>
-      <img
-        src='/src/assets/reactjs-icon.svg'
-        className='absolute mt-10'
-        alt=''
-      />
-      <img src='/src/assets/code-mockup.svg' className='mt-10' alt='' />
+
+      <div className='absolute'>
+        <ReactJsIcon />
+      </div>
+
+      <CodeMockup />
+
       <Footer />
     </div>
   );
