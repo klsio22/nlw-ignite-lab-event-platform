@@ -22,8 +22,8 @@ export function ReactJsIcon() {
           y2='575'
           gradientUnits='userSpaceOnUse'
         >
-          <stop stop-color='#81D8F7' />
-          <stop offset='1' stop-color='#81D8F7' stop-opacity='0' />
+          <stop stopColor='#81D8F7' />
+          <stop offset='1' stopColor='#81D8F7' stopOpacity='0' />
         </linearGradient>
       </defs>
     </svg>

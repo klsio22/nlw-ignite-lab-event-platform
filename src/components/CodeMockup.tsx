@@ -45,14 +45,14 @@ export function CodeMockup() {
         height='43'
         rx='4'
         fill='#00875F'
-        fill-opacity='0.5'
+        fillOpacity='0.5'
       />
       <circle
         cx='1098.5'
         cy='338.5'
         r='35.5'
         fill='#81D8F7'
-        fill-opacity='0.5'
+        fillOpacity='0.5'
       />
       <rect
         x='983.5'
@@ -67,72 +67,62 @@ export function CodeMockup() {
         <path
           d='M46 360.08V361C45.9988 363.156 45.3005 365.255 44.0093 366.982C42.7182 368.709 40.9033 369.972 38.8354 370.584C36.7674 371.195 34.5573 371.122 32.5345 370.375C30.5117 369.627 28.7847 368.246 27.611 366.437C26.4373 364.628 25.8798 362.488 26.0217 360.336C26.1636 358.185 26.9972 356.136 28.3983 354.497C29.7994 352.858 31.6928 351.715 33.7962 351.24C35.8996 350.765 38.1003 350.982 40.07 351.86'
           stroke='#29A746'
-          stroke-width='2'
-          stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinecap='round'
+          strokeLinejoin='round'
         />
         <path
           d='M46 353L36 363.01L33 360.01'
           stroke='#29A746'
-          stroke-width='2'
-          stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinecap='round'
+          strokeLinejoin='round'
         />
         <path
           d='M188 352H172C170.895 352 170 352.895 170 354V364C170 365.105 170.895 366 172 366H188C189.105 366 190 365.105 190 364V354C190 352.895 189.105 352 188 352Z'
           stroke='#75BEFF'
-          stroke-width='2'
-          stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinecap='round'
+          strokeLinejoin='round'
         />
         <path
           d='M176 370H184'
           stroke='#75BEFF'
-          stroke-width='2'
-          stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinecap='round'
+          strokeLinejoin='round'
         />
         <path
           d='M180 366V370'
           stroke='#75BEFF'
-          stroke-width='2'
-          stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinecap='round'
+          strokeLinejoin='round'
         />
         <path
           d='M137 351H127C125.895 351 125 351.895 125 353V369C125 370.105 125.895 371 127 371H137C138.105 371 139 370.105 139 369V353C139 351.895 138.105 351 137 351Z'
           stroke='#0366D6'
-          stroke-width='2'
-          stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinecap='round'
+          strokeLinejoin='round'
         />
         <path
           d='M132 367H132.01'
           stroke='#0366D6'
-          stroke-width='2'
-          stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinecap='round'
+          strokeLinejoin='round'
         />
         <path
           d='M229 351L219 363H228L227 371L237 359H228L229 351Z'
           stroke='#D59368'
-          stroke-width='2'
-          stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinecap='round'
+          strokeLinejoin='round'
         />
         <path
           d='M95 356L88 361L95 366V356Z'
           stroke='#D74154'
-          stroke-width='2'
-          stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinecap='round'
+          strokeLinejoin='round'
         />
         <path
           d='M86 354H75C73.8954 354 73 354.895 73 356V366C73 367.105 73.8954 368 75 368H86C87.1046 368 88 367.105 88 366V356C88 354.895 87.1046 354 86 354Z'
           stroke='#D74154'
-          stroke-width='2'
-          stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinecap='round'
+          strokeLinejoin='round'
         />
       </g>
       <rect
@@ -183,8 +173,8 @@ export function CodeMockup() {
           y2='561.364'
           gradientUnits='userSpaceOnUse'
         >
-          <stop stop-color='#D9D9D9' />
-          <stop offset='1' stop-color='#D9D9D9' stop-opacity='0' />
+          <stop stopColor='#D9D9D9' />
+          <stop offset='1' stopColor='#D9D9D9' stopOpacity='0' />
         </linearGradient>
         <image
           id='image0_425_129'
