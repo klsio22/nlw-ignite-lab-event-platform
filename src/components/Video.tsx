@@ -8,7 +8,7 @@ import {
 
 import '@vime/core/themes/default.css';
 import { useGetLessonBySlugQuery } from '../graphql/generated';
-import { da } from 'date-fns/locale';
+import { Footer } from '../components/Footer';
 
 interface VideoProps {
   lessonSlug: string;
@@ -128,6 +128,8 @@ export function Video(props: VideoProps) {
           </a>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }

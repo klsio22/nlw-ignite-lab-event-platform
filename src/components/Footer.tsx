@@ -1,14 +1,15 @@
 export function Footer() {
   return (
     <footer
-      className='w-full py-5 flex items-center justify-between bg-blur  
-    border-b border-gray-600 p-6 text-xs'
+      className='w-full bg-transparent text-xs'
     >
-      <div className='flex gap-3 items-center'>
-        <img src='/src/assets/logo-rockeat.svg' alt='logo rocketseat' />
-        <span>Rocketseat - Todos os direitos reservados</span>
+      <div className='p-6 flex items-center justify-between border-gray-600 border-t-2 mx-6'>
+        <div className='flex gap-5 items-center'>
+          <img src='/src/assets/logo-rockeat.svg' alt='logo rocketseat' />
+          <span>Rocketseat - Todos os direitos reservados</span>
+        </div>
+        <span>Políticas de privacidade</span>
       </div>
-      <span>Políticas de privacidade</span>
     </footer>
   );
 }
