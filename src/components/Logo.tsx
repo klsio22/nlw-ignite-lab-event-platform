@@ -2,6 +2,7 @@ export function Logo() {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
+      className="w-full"
       width='237'
       height='34'
       fill='none'

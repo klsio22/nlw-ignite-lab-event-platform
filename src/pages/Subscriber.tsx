@@ -30,10 +30,10 @@ export default function Subscriber() {
 
   return (
     <div className='min-h-screen bg-blur bg-cover bg-no-repeat flex flex-col items-center'>
-      <div className='w-full max-w-[1100px] flex items-center justify-between mt-20 mx-auto'>
-        <div className='max-w-[640px]'>
+      <div className='w-full max-w-[1100px] flex items-center justify-between mt-20 mx-auto lg:flex-col lg:gap-8'>
+        <div className='max-w-[640px] lg:text-center lg:px-5'>
           <Logo />
-          <h1 className='mt-8 text-[2.5rem] leading-tight'>
+          <h1 className='mt-8 text-[2.5rem] leading-tight md:text-2xl'>
             Construa uma{' '}
             <strong className='text-blue-500'>aplicação completa</strong> , do
             zero, com <strong className='text-blue-500'>React</strong>
@@ -78,7 +78,7 @@ export default function Subscriber() {
         </div>
       </div>
 
-      <div className='absolute'>
+      <div className='absolute mt-5 z-[-1]'>
         <ReactJsIcon />
       </div>
 

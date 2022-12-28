@@ -1,8 +1,8 @@
 export function Footer() {
   return (
     <footer className='w-full bg-transparent text-xs'>
-      <div className='p-6 flex items-center justify-between border-gray-600 border-t-2 mx-6'>
-        <div className='flex gap-5 items-center'>
+      <div className='p-6 flex items-center justify-between border-gray-600 border-t-2 mx-6 lg:flex-col lg:gap-4'>
+        <div className='flex gap-4 items-center lg:flex-col'>
           <span>
             <svg
               width='162'

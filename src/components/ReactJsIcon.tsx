@@ -1,9 +1,9 @@
-
 export function ReactJsIcon() {
   return (
     <svg
-      width='654'
-      height='575'
+      className='w-screen'
+      width='600'
+      height='500'
       viewBox='0 0 654 575'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'

@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        blur: 'url(/src/assets/blur-background.png)'
+        blur: 'url(/src/assets/blur-background.png)',
       },
       fontFamily: {
         sans: 'Roboto, sans-serif',
@@ -33,6 +33,12 @@ module.exports = {
           700: '#121214',
           900: '#09090A',
         },
+      },
+      screens: {
+        lg: { max: '1024px' },
+        // => @media (max-width: 1024px) { ... }
+        md: { max: '767px' },
+        // => @media (max-width: 767px) { ... }
       },
     },
   },

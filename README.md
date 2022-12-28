@@ -31,6 +31,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - Tailwindcss
 
+- WebPack 
+
 ## 💻 Projeto
 
 ✈️ O objetivo dessa aplicação web é desenvolver uma plataforma de evento Front-end e que possa ser acessada tanto em mobile quanto em desktop.

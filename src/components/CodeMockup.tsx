@@ -1,7 +1,8 @@
 export function CodeMockup() {
   return (
     <svg
-      width='1216'
+      className="md:max-h-40 lg:w-9/12  xl:max-w-6xl	"
+      width='1200'
       height='658'
       viewBox='0 0 1216 658'
       fill='none'
