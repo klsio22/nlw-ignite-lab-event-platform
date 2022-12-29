@@ -14,8 +14,6 @@ export function Event() {
         {slug ? <Video lessonSlug={slug} /> : <div className='flex-1' />}
         <Sidebar />
       </main>
-
-      
     </div>
   );
 }
