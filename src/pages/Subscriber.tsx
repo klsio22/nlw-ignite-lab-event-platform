@@ -5,6 +5,8 @@ import { useCreateSubscriberMutation } from '../graphql/generated';
 import { Footer } from '../components/Footer';
 import { ReactJsIcon } from '../components/ReactJsIcon';
 import { CodeMockup } from '../components/CodeMockup';
+import { LogoMobile } from '../components/LogoMobile';
+import { TypesLogos } from '../components/TypesLogos';
 
 export default function Subscriber() {
   const navigate = useNavigate();
@@ -32,7 +34,11 @@ export default function Subscriber() {
     <div className='min-h-screen bg-blur bg-cover bg-no-repeat flex flex-col items-center'>
       <div className='w-full max-w-[1100px] flex items-center justify-between mt-20 mx-auto z-10 lg:flex-col lg:gap-8 md:flex-col md:gap-8'>
         <div className='max-w-[640px] lg:text-center lg:px-5 md:text-center md:px-5 '>
-          <Logo />
+
+          <div className='flex lg:justify-center md:justify-center'>
+            <TypesLogos />
+          </div>
+
           <h1 className='mt-8 text-[2.5rem] leading-tight md:text-2xl'>
             Construa uma{' '}
             <strong className='text-blue-500'>aplicação completa</strong> , do

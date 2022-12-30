@@ -35,10 +35,12 @@ module.exports = {
         },
       },
       screens: {
-        lg: { min: '768px', max: '1024px' },
-        // => @media (max-width: 1024px) { ... }
         md: { max: '767px' },
         // => @media (max-width: 767px) { ... }
+        lg: { min: '768px', max: '1024px' },
+        // => @media (max-width: 1024px) { ... }
+        xl: { min: '1025px' },
+        // => @media (max-width: 1025px) { ... }
       },
     },
   },

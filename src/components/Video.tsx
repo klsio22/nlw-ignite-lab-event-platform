@@ -91,7 +91,7 @@ export function Video(props: VideoProps) {
         <div className='gap-8 mt-20 grid grid-cols-2 md:flex md:flex-col'>
           <a
             href=''
-            className='bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors md:flex md:items-center md:gap-3'
+            className='bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors md:flex md:items-center md:gap-4 '
           >
             <div className='bg-green-700 h-full p-6 flex items-center md:py-20 '>
               <FileArrowDown size={40} />
@@ -103,14 +103,14 @@ export function Video(props: VideoProps) {
                 desenvolvimento
               </p>
             </div>
-            <div className='h-full p-6 flex items-center'>
+            <div className='h-full p-6 flex items-center md:p-2'>
               <CaretRight size={24} />
             </div>
           </a>
 
           <a
             href=''
-            className='bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors md:flex md:items-center md:gap-3'
+            className='bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors md:flex md:items-center md:gap-4'
           >
             <div className='bg-green-700 h-full p-6 flex items-center md:py-20'>
               <FileArrowDown size={40} />
@@ -122,7 +122,7 @@ export function Video(props: VideoProps) {
                 máquina
               </p>
             </div>
-            <div className='h-full p-6 flex items-center'>
+            <div className='h-full p-6 flex items-center md:p-2'>
               <CaretRight size={24} />
             </div>
           </a>
