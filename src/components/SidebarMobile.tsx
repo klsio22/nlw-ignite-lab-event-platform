@@ -19,7 +19,7 @@ export function SidebarMobile({
   return (
     <>
       {!menuIsActive ? (
-        <aside className='w-full h-full bg-gray-700 p-6 border-l border-gray-600 lg:absolute lg:right-[-2000px]  lg:z-10 md:z-10 md:absolute md:right-[-1000px] md:ease-in-out lg:top-14 md:top-14 lg:ease-in-out lg:duration-1000 md:duration-1000'>
+        <aside className='absolute w-96 h-full bg-gray-700 p-6 border-l border-gray-600 lg:left-[-400px] lg:z-10 md:z-10 md:left-[-400px] md:ease-in-out lg:top-14 md:top-14 lg:ease-in-out lg:duration-1000 md:duration-1000'>
           <span className='font-bold text-2xl pb-6 mb-6 border-b border-gray-500 block'>
             Cronograma de aulas
           </span>
@@ -38,7 +38,7 @@ export function SidebarMobile({
           </div>
         </aside>
       ) : (
-        <aside className='w-full h-full bg-gray-700 p-6 border-l border-gray-600 lg:absolute lg:right-0 lg:z-[100] md:z-10 md:absolute md:right-0 lg:top-14 md:top-14 md:ease-in-out lg:ease-in-out  lg:duration-1000 md:duration-1000'>
+        <aside className='absolute w-full h-full bg-gray-700 p-6 border-l border-gray-600 lg:left-0 lg:z-[100] md:z-10 md:left-0 lg:top-14 md:top-14 md:ease-in-out lg:ease-in-out  lg:duration-1000 md:duration-1000'>
           <span className='font-bold text-2xl pb-6 mb-6 border-b border-gray-500 block'>
             Cronograma de aulas
           </span>
