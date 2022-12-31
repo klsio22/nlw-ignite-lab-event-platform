@@ -1,4 +1,4 @@
-import { List } from 'phosphor-react';
+import { List, X } from 'phosphor-react';
 import { TypesLogos } from './TypesLogos';
 import { useState } from 'react';
 import { SidebarMobile } from './SidebarMobile';
@@ -20,7 +20,11 @@ export function Header() {
 
       <div className='hidden lg:flex lg:items-center lg:gap-2 md:flex md:items-center md:gap-2'>
         Aulas
-        <List size={32} onClick={ToggleMode} />
+        {!menuIsActive ? (
+          <List size={32} onClick={ToggleMode} />
+        ) : (
+          <X size={32} onClick={ToggleMode} />
+        )}
         <SidebarMobile
           menuIsActive={menuIsActive}
           setMenuIsActive={setMenuIsActive}
