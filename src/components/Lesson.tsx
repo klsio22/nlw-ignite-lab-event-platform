@@ -25,18 +25,8 @@ export function Lesson(props: LessonProps) {
 
   const isActiveLesson = slug === props.slug;
 
-  const refreshPage = () => {};
-
   return (
-    <Link
-      to={`/event/lesson/${props.slug}`}
-      className='group'
-      onClick={() =>
-        setTimeout(() => {
-          window.location.reload();
-        }, 10)
-      }
-    >
+    <Link to={`/event/lesson/${props.slug}`} className='group'>
       <span className='text-gray-300'>{availableAtDateFormat}</span>
       <div
         className={classNames(
