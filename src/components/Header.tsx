@@ -8,7 +8,6 @@ export function Header() {
 
   const ToggleMode = () => {
     setMenuIsActive(!menuIsActive);
-    console.log(menuIsActive);
   };
 
   return (
@@ -27,7 +26,6 @@ export function Header() {
         )}
         <SidebarMobile
           menuIsActive={menuIsActive}
-          setMenuIsActive={setMenuIsActive}
         />
       </div>
     </header>
