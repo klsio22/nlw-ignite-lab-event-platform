@@ -1,7 +1,7 @@
 export function ReactJsIcon() {
   return (
     <svg
-      className='w-screen'
+      className='w-full'
       width='600'
       height='500'
       viewBox='0 0 654 575'
