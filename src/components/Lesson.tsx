@@ -25,8 +25,6 @@ export function Lesson(props: LessonProps) {
 
   const isActiveLesson = slug === props.slug;
 
-  const refreshPage = () => {};
-
   return (
     <Link
       to={`/event/lesson/${props.slug}`}
