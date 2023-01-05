@@ -1,11 +1,9 @@
 import { useState, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Logo } from '../components/Logo';
 import { useCreateSubscriberMutation } from '../graphql/generated';
 import { Footer } from '../components/Footer';
 import { ReactJsIcon } from '../components/ReactJsIcon';
 import { CodeMockup } from '../components/CodeMockup';
-import { LogoMobile } from '../components/LogoMobile';
 import { TypesLogos } from '../components/TypesLogos';
 
 export default function Subscriber() {
@@ -16,25 +14,28 @@ export default function Subscriber() {
 
   const [createSubscriber, { loading }] = useCreateSubscriberMutation();
 
+
   async function handleSubscriber(event: FormEvent) {
     event.preventDefault();
 
-    //console.log(name, email);
-    await createSubscriber({
-      variables: {
-        name,
-        email,
-      },
-    });
+    try {
+      await createSubscriber({
+        variables: {
+          name,
+          email,
+        },
+      });
 
-    navigate('/event/lesson/abertura-do-evento-ignite-lab');
+      navigate('/event/lesson/abertura-do-evento-ignite-lab');
+    } catch (error) {
+      console.log('Email já existe ou invalido');
+    }
   }
 
   return (
     <div className='min-h-screen bg-blur bg-cover bg-no-repeat flex flex-col items-center'>
       <div className='w-full max-w-[1100px] flex items-center justify-between mt-20 mx-auto z-10 lg:flex-col lg:gap-8 md:flex-col md:gap-8'>
         <div className='max-w-[640px] lg:text-center lg:px-5 md:text-center md:px-5 '>
-
           <div className='flex lg:justify-center md:justify-center'>
             <TypesLogos />
           </div>
@@ -66,12 +67,17 @@ export default function Subscriber() {
               placeholder='Seu nome completo'
               onChange={(event) => setName(event.target.value)}
             />
-            <input
-              className='bg-gray-900 rounded px-5 h-14'
-              type='email'
-              placeholder='Digite seu e-mail'
-              onChange={(event) => setEmail(event.target.value)}
-            />
+
+            <div className='flex flex-col gap-4'>
+              <input
+                className='bg-gray-900 rounded px-5 h-14'
+                type='email'
+                placeholder='Digite seu e-mail'
+                onChange={(event) => setEmail(event.target.value)}
+              />
+
+              <span className='text-red-500'>Email já existe ou é inválido</span>
+            </div>
 
             <button
               type='submit'
