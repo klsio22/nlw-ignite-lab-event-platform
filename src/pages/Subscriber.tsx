@@ -5,24 +5,49 @@ import { Footer } from '../components/Footer';
 import { ReactJsIcon } from '../components/ReactJsIcon';
 import { CodeMockup } from '../components/CodeMockup';
 import { TypesLogos } from '../components/TypesLogos';
+import { useForm, Resolver, SubmitHandler } from 'react-hook-form';
 
-export default function Subscriber() {
+type FormValues = {
+  name: string;
+  email: string;
+};
+
+interface Form {
+  name: string;
+  email: string;
+}
+
+const resolver: Resolver<FormValues> = async (values) => {
+  return {
+    values: values.name ? values : {},
+    errors: !values.email
+      ? {
+          email: {
+            type: 'required',
+            message: 'Por favor insira o email',
+          },
+        }
+      : {},
+  };
+};
+
+export default function Subscriber({ name, email }: Form) {
   const navigate = useNavigate();
-
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
 
   const [createSubscriber, { loading }] = useCreateSubscriberMutation();
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormValues>({ resolver });
 
-  async function handleSubscriber(event: FormEvent) {
-    event.preventDefault();
-
+  const onSubmit = handleSubmit(async (data) => {
     try {
       await createSubscriber({
         variables: {
-          name,
-          email,
+          name: data.name,
+          email: data.email,
         },
       });
 
@@ -30,7 +55,7 @@ export default function Subscriber() {
     } catch (error) {
       console.log('Email já existe ou invalido');
     }
-  }
+  });
 
   return (
     <div className='min-h-screen bg-blur bg-cover bg-no-repeat flex flex-col items-center'>
@@ -57,15 +82,13 @@ export default function Subscriber() {
             Inscreva-se gratuitamente
           </strong>
 
-          <form
-            onSubmit={handleSubscriber}
-            className='flex flex-col gap-2 w-full'
-          >
+          <form onSubmit={onSubmit} className='flex flex-col gap-2 w-full'>
             <input
               className='bg-gray-900 rounded px-5 h-14'
               type='text'
+              {...register('name')}
               placeholder='Seu nome completo'
-              onChange={(event) => setName(event.target.value)}
+              //onChange={(event) => setName(event.target.value)}
             />
 
             <div className='flex flex-col gap-4'>
@@ -73,10 +96,13 @@ export default function Subscriber() {
                 className='bg-gray-900 rounded px-5 h-14'
                 type='email'
                 placeholder='Digite seu e-mail'
-                onChange={(event) => setEmail(event.target.value)}
+                //onChange={(event) => setEmail(event.target.value)}
+                {...register('email')}
               />
 
-              <span className='text-red-500'>Email já existe ou é inválido</span>
+              {errors?.email && (
+                <span className='text-red-500'>{errors.email.message}</span>
+              )}
             </div>
 
             <button
