@@ -1,40 +1,66 @@
 import { useState, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Logo } from '../components/Logo';
 import { useCreateSubscriberMutation } from '../graphql/generated';
 import { Footer } from '../components/Footer';
 import { ReactJsIcon } from '../components/ReactJsIcon';
 import { CodeMockup } from '../components/CodeMockup';
-import { LogoMobile } from '../components/LogoMobile';
 import { TypesLogos } from '../components/TypesLogos';
+import { useForm, Resolver, SubmitHandler } from 'react-hook-form';
 
-export default function Subscriber() {
+type FormValues = {
+  name: string;
+  email: string;
+};
+
+interface Form {
+  name: string;
+  email: string;
+}
+
+const resolver: Resolver<FormValues> = async (values) => {
+  return {
+    values: values.name ? values : {},
+    errors: !values.email
+      ? {
+          email: {
+            type: 'required',
+            message: 'Por favor insira o email',
+          },
+        }
+      : {},
+  };
+};
+
+export default function Subscriber({ name, email }: Form) {
   const navigate = useNavigate();
-
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
 
   const [createSubscriber, { loading }] = useCreateSubscriberMutation();
 
-  async function handleSubscriber(event: FormEvent) {
-    event.preventDefault();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormValues>({ resolver });
 
-    //console.log(name, email);
-    await createSubscriber({
-      variables: {
-        name,
-        email,
-      },
-    });
+  const onSubmit = handleSubmit(async (data) => {
+    try {
+      await createSubscriber({
+        variables: {
+          name: data.name,
+          email: data.email,
+        },
+      });
 
-    navigate('/event/lesson/abertura-do-evento-ignite-lab');
-  }
+      navigate('/event/lesson/abertura-do-evento-ignite-lab');
+    } catch (error) {
+      console.log('Email já existe ou invalido');
+    }
+  });
 
   return (
     <div className='min-h-screen bg-blur bg-cover bg-no-repeat flex flex-col items-center'>
       <div className='w-full max-w-[1100px] flex items-center justify-between mt-20 mx-auto z-10 lg:flex-col lg:gap-8 md:flex-col md:gap-8'>
         <div className='max-w-[640px] lg:text-center lg:px-5 md:text-center md:px-5 '>
-
           <div className='flex lg:justify-center md:justify-center'>
             <TypesLogos />
           </div>
@@ -56,22 +82,28 @@ export default function Subscriber() {
             Inscreva-se gratuitamente
           </strong>
 
-          <form
-            onSubmit={handleSubscriber}
-            className='flex flex-col gap-2 w-full'
-          >
+          <form onSubmit={onSubmit} className='flex flex-col gap-2 w-full'>
             <input
               className='bg-gray-900 rounded px-5 h-14'
               type='text'
+              {...register('name')}
               placeholder='Seu nome completo'
-              onChange={(event) => setName(event.target.value)}
+              //onChange={(event) => setName(event.target.value)}
             />
-            <input
-              className='bg-gray-900 rounded px-5 h-14'
-              type='email'
-              placeholder='Digite seu e-mail'
-              onChange={(event) => setEmail(event.target.value)}
-            />
+
+            <div className='flex flex-col gap-4'>
+              <input
+                className='bg-gray-900 rounded px-5 h-14'
+                type='email'
+                placeholder='Digite seu e-mail'
+                //onChange={(event) => setEmail(event.target.value)}
+                {...register('email')}
+              />
+
+              {errors?.email && (
+                <span className='text-red-500'>{errors.email.message}</span>
+              )}
+            </div>
 
             <button
               type='submit'
