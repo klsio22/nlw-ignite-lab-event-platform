@@ -5,6 +5,7 @@ import { ReactJsIcon } from '../components/ReactJsIcon';
 import { CodeMockup } from '../components/CodeMockup';
 import { TypesLogos } from '../components/TypesLogos';
 import { useForm } from 'react-hook-form';
+import { useState } from 'react';
 
 type FormValues = {
   name: string;
@@ -12,8 +13,8 @@ type FormValues = {
 };
 
 export default function Subscriber() {
+  const [alert, setAlert] = useState(false);
   const navigate = useNavigate();
-
   const [createSubscriber, { loading }] = useCreateSubscriberMutation();
 
   const {
@@ -33,12 +34,30 @@ export default function Subscriber() {
 
       navigate('/event/lesson/abertura-do-evento-ignite-lab');
     } catch (error) {
-      console.log('Email já existe ou invalido');
+      setAlert(true);
     }
   });
 
   return (
     <div className='min-h-screen bg-blur bg-cover bg-no-repeat flex flex-col items-center'>
+      {alert && (
+        <span className='absolute w-full h-[1000px] bg-zinc-700 opacity-70 z-40'></span>
+      )}
+      {alert && (
+        <div className='flex items-center justify-center'>
+          <div className='bg-gray-700 absolute z-50 top-1/4 w-1/3 h-1/3 rounded-lg flex justify-center items-center flex-col gap-10 p-3 text-center lg:w-2/4 md:w-80 md:top-[60%]'>
+            <span className='text-2xl'>
+              Email ou nome já existe no cadastrado
+            </span>
+            <button
+              className='bg-green-500 mt-2 p-2 font-bold text-xl'
+              onClick={() => setAlert(false)}
+            >
+              Fechar
+            </button>
+          </div>
+        </div>
+      )}
       <div className='w-full max-w-[1100px] flex items-center justify-between mt-20 mx-auto z-10 lg:flex-col lg:gap-8 md:flex-col md:gap-8'>
         <div className='max-w-[640px] lg:text-center lg:px-5 md:text-center md:px-5 '>
           <div className='flex lg:justify-center md:justify-center'>
@@ -101,11 +120,9 @@ export default function Subscriber() {
           </form>
         </div>
       </div>
-
       <div className='absolute mt-5 z-0'>
         <ReactJsIcon />
       </div>
-
       <CodeMockup />
 
       <Footer />

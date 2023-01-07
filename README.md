@@ -25,19 +25,17 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
   
 - Vite
   
-- NextJS
-  
 - GraphQL
 
 - Tailwindcss
 
-- WebPack 
+- WebPack
 
 ## 💻 Projeto
 
 ✈️ O objetivo dessa aplicação web é desenvolver uma plataforma de evento Front-end e que possa ser acessada tanto em mobile quanto em desktop.
 
-🔗 Link do projeto online na vercel [event-platform](https://nlw-ignite-lab-event-platform.vercel.app/)
+🔗 Link do projeto online na vercel [plataforma do evento](https://nlw-ignite-lab-event-platform.vercel.app/)
 
 ## 🔖 Layout
 
