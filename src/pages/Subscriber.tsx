@@ -32,6 +32,9 @@ export default function Subscriber() {
         },
       });
 
+      localStorage.setItem('name', data.name);
+      localStorage.setItem('email', data.email);
+
       navigate('/event/lesson/abertura-do-evento-ignite-lab');
     } catch (error) {
       setAlert(true);
